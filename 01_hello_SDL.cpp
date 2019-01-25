@@ -1,6 +1,5 @@
 #include <iostream>
 #include <SDL2/SDL.h>
-#include <SDL_image.h>
 #include <fstream>
 #include <bitset>
 
@@ -56,12 +55,15 @@ int main( int argc, char** argv )
     SDL_CreateWindowAndRenderer(SCREEN_WIDTH, SCREEN_HEIGHT, 0, &window, &renderer);
     // SDL_Window * window = SDL_CreateWindow("SDL2 Grayscale", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 640, 480, 0);
     // SDL_Renderer * renderer = SDL_CreateRenderer(window, -1, 0);
-    SDL_PumpEvents();
-    SDL_SetWindowSize(window, SCREEN_WIDTH, SCREEN_HEIGHT);
-    for (int i = 0; i < SCREEN_WIDTH; ++i)
-        SDL_RenderDrawPoint(renderer, i, i);
+    // SDL_PumpEvents();
+    // SDL_SetWindowSize(window, SCREEN_WIDTH, SCREEN_HEIGHT);
+    SDL_SetRenderDrawColor(renderer, 0, 0, 0, 0);
     SDL_RenderClear(renderer);
-    // readTileROM(renderer);
+    // SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);
+    // for (int i = 0; i < WINDOW_WIDTH; ++i)
+    //     SDL_RenderDrawPoint(renderer, i, i);
+
+    readTileROM(renderer);
     SDL_RenderPresent(renderer);
 
     while (1) {
