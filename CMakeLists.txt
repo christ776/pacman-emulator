@@ -1,7 +1,8 @@
-cmake_minimum_required(VERSION 3.12)
-project(01_hello_SDL)
+cmake_minimum_required(VERSION 3.13)
+project(pacman_tile_parser)
 
 set(CMAKE_CXX_STANDARD 14)
+
 # Include our own modules
 #
 ##include_directories(${SDL2_INCLUDE_DIRS})
@@ -12,6 +13,9 @@ include_directories(${SDL2_INCLUDE_DIR})
 #${SDL2_IMAGE_INCLUDE_DIRS})
 
 
-add_executable(01_hello_SDL 01_hello_SDL.cpp)
-target_link_libraries(01_hello_SDL ${SDL2_LIBRARY})
+add_executable(pacman_tile_parser src/main.cpp 
+                                src/parser/parser.cpp 
+                                src/renderer/sdl_renderer.cpp
+                                src/renderer/pixel.cpp)
+target_link_libraries(pacman_tile_parser ${SDL2_LIBRARY})
        
