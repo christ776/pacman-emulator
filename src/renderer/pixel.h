@@ -16,8 +16,8 @@ struct Pixel {
     } color;
 
     Pixel(uint8_t low_nibble, uint8_t high_nibble);
-};
 
-// std::ostream& operator<<(std::ostream& os, Pixel::Color& obj) {
-//   return os << obj.red << obj.green << obj.blue << std::endl;
-// }
+    Pixel();
+
+    uint32_t rgb();
+};

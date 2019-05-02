@@ -8,13 +8,14 @@
       "name": "(lldb) Launch",
       "type": "cppdbg",
       "request": "launch",
-      "program": "${workspaceFolder}/play",
-      "args": ["type format add --format hex int"],
+      "program": "${workspaceFolder}/stripes",
+      "args": ["type format add --format hex int -exec -enable-pretty-printing"],
       "stopAtEntry": false,
       "cwd": "${workspaceFolder}",
       "environment": [],
       "externalConsole": true,
-      "MIMode": "lldb"
+      "MIMode": "gdb",
+      "miDebuggerPath": "/usr/bin/gdb"
     }
   ]
 }

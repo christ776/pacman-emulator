@@ -1,3 +1,4 @@
 #include <vector>
+#include "pixel.h"
 
-void drawPixels(const std::vector<char> & buffer);
+std::vector<Pixel> decodeTiles(const std::vector<char> & buffer);

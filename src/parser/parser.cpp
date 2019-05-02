@@ -16,7 +16,7 @@ vector<char> readTileROM(std::string romPath) {
 
     ifd.seekg(0, ios::end);
     int size = ifd.tellg();
-    cout << "file size:" << size << endl;
+    //cout << "file size:" << size << endl;
 
     vector<char> buffer;
 

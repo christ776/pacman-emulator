@@ -10,10 +10,14 @@ ostream& operator<<(ostream& os, Pixel& obj) {
     return os << "Rendering pixel with" << obj.color << endl;
 }
 
+Pixel::Pixel() {
+    Pixel(0,0);
+}
+
 Pixel::Pixel(uint8_t low_nibble, uint8_t high_nibble) {
     uint8_t pixel_color = (low_nibble << 1)  | high_nibble;
     std::bitset<8> pixel (pixel_color); 
-    // cout << "pixel bits: " << pixel << endl;    
+    //cout << "pixel bits: " << pixel << endl;    
 
     switch (pixel_color)
     {
@@ -38,3 +42,7 @@ Pixel::Pixel(uint8_t low_nibble, uint8_t high_nibble) {
             break;
     }
 }
+
+    uint32_t Pixel::rgb() {
+        return color.red << 16 | color.green << 8 | color.blue;
+    }

@@ -52,7 +52,13 @@
     "typeinfo": "cpp",
     "utility": "cpp",
     "cinttypes": "cpp",
-    "cmath": "cpp"
+    "cmath": "cpp",
+    "array": "cpp",
+    "*.tcc": "cpp",
+    "clocale": "cpp",
+    "unordered_map": "cpp",
+    "optional": "cpp",
+    "sstream": "cpp"
   },
   "cmake.configureOnOpen": true,
   "C_Cpp.configurationWarnings": "Disabled",

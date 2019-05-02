@@ -7,15 +7,15 @@ set(CMAKE_CXX_STANDARD 14)
 #
 ##include_directories(${SDL2_INCLUDE_DIRS})
 set(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake)
-find_package (SDL2 REQUIRED)
-#find_package(SDL2_image REQUIRED)
-include_directories(${SDL2_INCLUDE_DIR}) 
-#${SDL2_IMAGE_INCLUDE_DIRS})
 
+find_package(OpenGL)
+find_package(GLUT)
+
+include_directories(${OPENGL_INCLUDE_DIRS} ${GLUT_INCLUDE_DIRS}) 
 
 add_executable(pacman_tile_parser src/main.cpp 
                                 src/parser/parser.cpp 
-                                src/renderer/sdl_renderer.cpp
+                                src/renderer/opengl_renderer.cpp
                                 src/renderer/pixel.cpp)
-target_link_libraries(pacman_tile_parser ${SDL2_LIBRARY})
+target_link_libraries(pacman_tile_parser ${OPENGL_LIBRARIES} ${GLUT_LIBRARIES})
        
