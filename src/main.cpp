@@ -6,7 +6,8 @@
  
 // Display size 
 #define SCREEN_WIDTH 128
-#define SCREEN_HEIGHT 16
+#define SCREEN_HEIGHT 128
+#define TILE_SIZE 16
  
 int modifier = 10;
  
@@ -72,7 +73,7 @@ void updateTexture()
     //Update pixels
 	for(int y = 0; y < SCREEN_HEIGHT; y++)	{
         for(int x = 0; x < SCREEN_WIDTH; x++) {
-            Pixel pixel = pixelData.at(y * SCREEN_HEIGHT + x);
+            Pixel pixel = pixelData.at(y * TILE_SIZE * 8 + x);
             screenData[y][x][0] = pixel.color.red;
             screenData[y][x][1] = pixel.color.green;
             screenData[y][x][2] = pixel.color.blue;
